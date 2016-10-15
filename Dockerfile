@@ -4,6 +4,9 @@ FROM phusion/baseimage:0.9.19
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
+# apparently we can't assume apt is up to date
+RUN apt-get update
+
 # install bind9
 RUN apt-get install bind9
 
