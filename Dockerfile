@@ -10,6 +10,11 @@ RUN apt-get update
 # install bind9
 RUN apt-get -y install bind9
 
+# Add runit script
+RUN mkdir /etc/service/named
+ADD named.sh /etc/service/named/run
+
+
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
