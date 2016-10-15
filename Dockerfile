@@ -8,7 +8,7 @@ CMD ["/sbin/my_init"]
 RUN apt-get update
 
 # install bind9
-RUN apt-get install bind9
+RUN apt-get -y install bind9
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
